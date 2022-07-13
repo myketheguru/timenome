@@ -1,0 +1,189 @@
+@font-face {
+  font-family: digital-7;
+  src: url('https://myketheguru.github.io/3d-digital-clock-speaker-css/fonts/digital-7.ttf');
+}
+
+.master_knob-container {
+    background-color: #181717;
+    padding: 32px;
+    border-radius: 50%;
+    box-shadow: 0 0 0.4em #202020;
+}
+
+.master_knob-surround {
+    position: relative;
+    background-color: grey;
+    width: 26em;
+    height: 26em;
+    border-radius: 50%;
+    border: solid 0.25em #0e0e0e;
+    /* margin: 5em auto; */
+    background-color: #181818;
+    background-image: linear-gradient(to bottom, #222222, #141414);
+    /* box-shadow: 0 0.2em 0.1em 0.05em rgba(255, 255, 255, 0.1) inset, 0 -0.2em 0.1em 0.05em rgba(0, 0, 0, 0.5) inset, 0 0.5em 0.65em 0 rgba(0, 0, 0, 0.3); */
+    z-index: 5;
+  }
+
+  .master_knob-inner {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1A1A1A;
+    box-shadow: -2px -2px 2px #171616, 2px 2px 2px #161616;
+  }
+  
+  .master_knob-inner figure {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1F1F1F;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #0f0f0f;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 35px 0px;
+    align-items: center;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    font-size: 19px;
+  }
+
+  .master_knob-inner figure p {
+    opacity: 0.3; 
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .master_knob-inner figure .display h1 {
+    width: 90px;
+    height: 50px;
+    position: relative;
+    user-select: none;
+    pointer-events: none;
+    font-size: 55px;
+    letter-spacing: 4px;
+    /* font-style: italic; */
+    font-family: 'digital-7', Arial, Helvetica, sans-serif;
+    text-align: end;
+    color: #53b67a;
+  }
+  
+  .master_knob-inner figure .display h1::after {
+    color: rgba(255, 255, 255, 0.4);
+    content: '000';
+    position: absolute;
+    left: 1px;
+    opacity: 0.3;
+  }
+
+  .caret-down {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid #252626;
+    position: relative;
+    top: 82%;
+    left: 13%;
+    transform: rotate(-132deg);
+  }
+
+  .knob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    z-index: 10;
+  }
+
+  .knob:before {
+    content: "";
+    position: absolute;
+    bottom: 19%;
+    left: 18%;
+    width: 5%;
+    height: 5%;
+    background-color: #51d961;
+    border-radius: 50%;
+    box-shadow: 0 0 0.4em 0 #79f4cf;
+  }
+
+  .min,
+  .max,
+  .label {
+    display: block;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    font-size: 25px;
+    position: absolute;
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .min {
+    bottom: -2em;
+    left: 1em;
+  }
+
+  .label {
+    bottom: -4em;
+    left: 50%;
+    transform: translate(-40%);
+    font-size: 16px;
+  }
+  
+  .max {
+    bottom: -2em;
+    right: 1em;
+  }
+
+  .tick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    overflow: visible;
+  }
+
+  .tick:after {
+    content: "";
+    width: 0.08em;
+    height: 0.4em;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: -1.2em;
+    left: 50%;
+    transition: all 180ms ease-out;
+}
+
+.master_knob-inner .tick:after {
+    background-color: rgba(255, 255, 255, 0.016);
+    top: 1em;
+    height: 1em;
+    width: 0.06em;
+}
+
+  .activetick:after {
+    background-color: #a8f8d5;
+    box-shadow: 0 0 0.3em 0.08em #79f4c7;
+    transition: all 50ms ease-in;
+  }

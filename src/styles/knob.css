@@ -1,0 +1,164 @@
+.knob-container {
+    background-color: #181717;
+    padding: 28px;
+    border-radius: 50%;
+    box-shadow: 0 0 0.4em #202020;
+    position: relative;
+}
+
+.knob-surround {
+    position: relative;
+    background-color: grey;
+    width: 14em;
+    height: 14em;
+    border-radius: 50%;
+    border: solid 0.15em #121212;
+    /* margin: 5em auto; */
+    background-color: #181818;
+    background-image: linear-gradient(to bottom, #222222, #141414);
+    /* box-shadow: 0 0.2em 0.1em 0.05em rgba(255, 255, 255, 0.1) inset, 0 -0.2em 0.1em 0.05em rgba(0, 0, 0, 0.5) inset, 0 0.5em 0.65em 0 rgba(0, 0, 0, 0.3); */
+    z-index: 5;
+  }
+
+  .knob-inner {
+    position: absolute;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1A1A1A;
+    border: 2px solid #212121;
+  }
+
+  .knob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: rotate(0deg);
+    z-index: 10;
+  }
+
+  .knob:before {
+    content: "";
+    position: absolute;
+    bottom: 19%;
+    left: 19%;
+    width: 3%;
+    height: 3%;
+    background-color: #51d961;
+    border-radius: 50%;
+    box-shadow: 0 0 0.4em 0 #79f4cf;
+  }
+
+  .min,
+  .max,
+  .label {
+    display: block;
+    font-family: "Varela Round", sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    font-size: 25px;
+    position: absolute;
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  .min {
+    bottom: -2em;
+    left: 1em;
+  }
+
+  .label {
+    bottom: -4em;
+    left: 50%;
+    transform: translate(-40%);
+    font-size: 16px;
+  }
+  
+  .max {
+    bottom: -2em;
+    right: 1em;
+  }
+
+  .tick {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    overflow: visible;
+  }
+
+  .tick:after {
+    content: "";
+    width: 0.08em;
+    height: 0.4em;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: -1.2em;
+    left: 50%;
+    transition: all 180ms ease-out;
+}
+
+.knob-inner .tick:after {
+    background-color: rgba(255, 255, 255, 0.033);
+    top: 0.5em;
+    height: 0.8em;
+    width: 0.06em;
+}
+
+.knob-inner .tick:first-child::after {
+    background-color: rgba(255, 255, 255, 0.073);
+    height: 4em;
+    width: 0.20em;
+}
+
+.indicator-box {
+    position: absolute;
+    color: #474646;
+    font-weight: 700;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.indicator-box .led {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #51d961;
+    box-shadow: 0 0 15px #79f4c7;
+}
+
+.indicator-box .bars {
+    display: flex;
+    gap: 8px;
+}
+
+.indicator-box .bars .bar {
+    width: 8px; 
+    height: 25px;
+    background-color: #363535;
+    border-radius: 2px;
+}
+
+.indicator-box .bars .bar.active {
+    background-color: #51d961;
+    box-shadow: 0 0 15px #79f4c7;
+}
+
+  .activetick:after {
+    background-color: #a8f8d5;
+    box-shadow: 0 0 0.3em 0.08em #79f4c7;
+    transition: all 50ms ease-in;
+  }
