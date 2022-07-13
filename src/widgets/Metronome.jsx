@@ -42,7 +42,7 @@ const Metronome = () => {
             <p>SYNC</p>
         </Knob>
         <MasterKnob getValue={(value) => { 
-            // setBpm(value)
+            setBpm(value)
             // metronome.timeInterval = 60000 / value;
             metronome.current.tempo = value;
             setCount(count + 1)
@@ -50,10 +50,11 @@ const Metronome = () => {
         }} />
         <Knob label={'OUTPUT'}>
             <div className="bars">
-                <div className="bar active"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
+                {
+                    [...Array(4)].map((value, i) => {
+                        return <div className={`bar ${metronome.current.currentBeatInBar === i ? 'active' : ''}`}></div>
+                    })
+                }
             </div>
             <p>1/4 STEP</p>
         </Knob>
