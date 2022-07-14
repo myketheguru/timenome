@@ -19,6 +19,7 @@
   background-color: #181717;
   position: absolute;
   bottom: 100px;
+  z-index: 100;
 }
 
 .button-switch input {
@@ -81,4 +82,19 @@
   color: #3e3d3d;
   opacity: 1;
   transition: 1s 5s;
+}
+
+@media screen and (max-width: 1240px) {
+  .button-switch {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+ ._metronome {
+  padding: 180px 0;
+  gap: 120px;
+ } 
 }

@@ -57,13 +57,14 @@
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     font-weight: 600;
-    font-size: 19px;
+    /* font-size: 1.8em; */
   }
-
-  .master_knob-inner figure p {
+  
+  .master_knob-inner figure .display p {
     opacity: 0.3; 
     user-select: none;
     pointer-events: none;
+    font-size: 1em;
   }
 
   .master_knob-inner figure .display h1 {
@@ -72,7 +73,7 @@
     position: relative;
     user-select: none;
     pointer-events: none;
-    font-size: 55px;
+    font-size: 4em;
     letter-spacing: 4px;
     /* font-style: italic; */
     font-family: 'digital-7', Arial, Helvetica, sans-serif;
@@ -85,6 +86,7 @@
     content: '000';
     position: absolute;
     left: 1px;
+    top: 0;
     opacity: 0.3;
   }
 
@@ -187,3 +189,24 @@
     box-shadow: 0 0 0.3em 0.08em #79f4c7;
     transition: all 50ms ease-in;
   }
+
+@media screen and (max-width: 1024px) {
+  .master_knob-inner figure .display h1 {
+    text-align: center;
+  }
+  .master_knob-inner figure .display h1::after {
+    display: none;
+  }
+
+  .caret-down {
+    
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    
+    border-top: 10px solid #252626;
+    position: relative;
+    top: 81%;
+    left: 13%;
+    transform: rotate(-132deg);
+  }
+}

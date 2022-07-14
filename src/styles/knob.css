@@ -162,3 +162,10 @@
     box-shadow: 0 0 0.3em 0.08em #79f4c7;
     transition: all 50ms ease-in;
   }
+
+  
+@media screen and (max-width: 1224px) {
+  .indicator-box {
+    top: -70px;
+  }
+}
